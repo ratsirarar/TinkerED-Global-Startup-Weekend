@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% autoescape true %}
+<html>
+  <head>
+<link type="text/css" rel="stylesheet" href="/static/css/bootstrap.css" />
+  </head>
+  <body>
+  <div class="bs-masthead" style="margin-bottom: 30px;">
+    <div class="text-center container">
+    <h1>Global Startup Battle - Women's Circle </h1>
+    <p class="lead">Updated every 12 min - Powered by <a href="http://tinkered.co/">TinkerED</a> </p>
+  </div>
+  </div>
+   <div class="container">
+    {% for startup in startups %}
+
+    <div class="media" {% if startup.name == "TinkerED" %} style="border:3px dashed red"{% endif %}>
+    <a class="pull-left" href="#">
+      <img class="media-object" src="{{startup.img}}" width="74" height="64" data-src="holder.js/74x64">
+    </a>
+    <div class="media-body">
+      <h4 class="media-heading" style="font-weight: lighter">{{loop.index}} - <b>{{startup.name}}</b> with <b>{{startup.vote}}</b> votes </h4>
+    </div>
+   </div>
+
+{% endfor %}
+<script src="/static/js/bootstrap.min.js"></script>
+  </body>
+
+</html>
+{% endautoescape %}

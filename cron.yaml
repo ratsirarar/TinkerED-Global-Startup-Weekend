@@ -1,0 +1,4 @@
+cron:
+- description: get data from global startup weekend
+  url: /run/scrap
+  schedule: every 12 mins
